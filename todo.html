@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>todo application</title>
+  <meta charset="utf-8">
+  <script src="handlebars-v4.1.2.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="todo.css">
+  <script type="text/javascript" src="todo.js"></script>
+</head>
+
+<body style="background-color: #E2E4E7;">
+
+<div id="todo_home" class="container-fluid">
+    <div id="headerbar" class="row headerbar">
+        <div class="col-sm-4">
+          <i id="left-icon" class="light fa fa-2x fa-check-circle"></i>
+        </div>
+        <div class="col-sm-4">
+          <h3 id="header-text">All Task</h3>
+        </div> 
+        <div class="col-sm-4">
+          <i id="right-icon" class="light fa fa-2x fa-plus-circle pull-right"></i>
+        </div>
+    </div> 
+
+
+
+    <br>
+    <div id="home" class="container">
+
+      <div class="row"> 
+            <div id="btnbar" class="btn-group btn-group-justified">
+              <a id ="all" onclick="all()" class="btn active">All</a>
+              <a id ="pen" onclick="pending()" class="btn">Pending</a>
+              <a id="com" onclick="comp()" class="btn">Completed</a>
+            </div>    
+      </div>
+    </div>
+    <hr>
+      <div class="container">
+        <div  id="task_pad" class="row">
+          <div class="col-sm-3"></div>
+          <div id="bar"  class="col-sm-6">
+              <div id="all-task">
+                  
+              </div>
+
+              <div id="pending-task">
+                
+              </div>
+                
+              <div id="completed-task">
+              
+              </div>
+
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+   <!--         <button id="edit" class="btn btn-success">Edit Task </button>  -->
+           
+      </div>
+</div>
+
+<!-- add new task bar -->
+
+<div id="todo_add" class="container-fluid">
+    <div id="add_new" class="row headerbar">
+        <div class="col-sm-4">
+          <i id="left" class="light fa fa-2x fa-angle-left"></i>
+        </div>
+        <div class=" col-sm-4">
+          <h3 id="header-text">Add Task</h3>
+        </div> <div class="col-sm-4"></div>
+    </div>
+    <div class="container">
+    <div class="row"><br>
+      <div class="centered">
+        <form>
+          <div class=" form-group">
+              <label for="task">Write</label>
+              <textarea class="form-control" rows="10" id="add_task" placeholder="add new task"></textarea>
+          </div>
+   
+            <input id="file-input" type="file" multiple>
+              <div id="preview"></div>
+          <button class="btn btn-success">Add Task</button>
+        </form>
+      </div>  
+      </div>
+  </div>
+</div>
+
+        
+<!-- edit task 
+<div id="todo_edit" class="container">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" style="color:white; background-color:#5cb85c">
+          <h3 class="text-left"><button id="bako" class="btn btn-success" style="color:white;"><span class="glyphicon glyphicon-chevron-left"></span></button></h3>
+          <h3 class="text-center" style="margin-top:-38px;">Edit Tasks</h3>
+      </div>
+      <div class="col-sm-3"></div>
+  </div>
+    <br><br>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <form>
+          <div class="form-group">
+              <label for="task">Edit</label>
+              <textarea class="form-control" rows="5" id="add_task" placeholder="Edit your task"></textarea>
+          </div>
+
+            <input type="file" name="pic" accept="image/*">
+            <br><br>
+          <button class="btn btn-success">Save Task</button>
+        </form>
+      </div>
+      <div class="col-sm-4"></div>  
+  </div>
+</div>
+
+-->
+
+</body>
+</html>
+
+<script id="alldata-template" type="text/x-handlebars-template">
+      <div id="display"><b><span>{{this.length}}</span><span id="status">{{state}}</span></b>
+        <span>TO-DO/TASKS</span>
+          <div id="clear-all" class=" clear_all pull-right paddingL10 {{hidden}}">
+            <label>CLEAR </label>
+            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+          </div>
+          <div id="greena" class="row">
+          {{#each this}}
+          <div class="tdisplay col-sm-12">
+            <div><input type="checkbox" style="zoom:1.3;"></input></div>
+            <div class="padtask">{{this.work}}</div><hr>
+            <div><i class="pencil fa fa-pencil pull-right" aria-hidden="true"></i>
+          </div>
+          </div>
+          
+          
+
+          {{/each}}
+          </div>
+      </div>
+</script>
