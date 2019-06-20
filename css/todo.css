@@ -1,0 +1,241 @@
+@font-face{
+   font-family: 'Roboto';
+   src: url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+* :not(i){
+   font-family: Roboto !important;
+}
+
+html, body{
+  font-family: 'Roboto' !important; 
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.hidingElement{
+  display: none;
+}
+
+
+hr{
+      margin-top: 10px;
+    margin-bottom: 0px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.light{
+    -webkit-text-stroke: 1px white;
+}
+
+
+
+.headerbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:white; background-color:green; 
+  height:50px;
+}
+
+#home{
+  padding-top: 10px;
+}
+
+#btnbar{
+  background-color: white;
+  border-color: grey;
+  border: 5px 5px;
+  border-style: 2px;
+}
+.btnb{
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.btnb:hover{
+  background-color: none;
+}
+
+.active, .btn:hover {
+  background-color: green;
+  color: white;
+}
+
+#left-icon{
+  display: flex;
+  width: 33px;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+.left-shift{
+  position: absolute;
+}
+.right-shift{
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+#bar{
+      margin-top: -5px;
+      padding-right: 20px; 
+      padding-left: 20px;
+}
+
+#left{
+  font-size: 35px;
+  padding:10px; 
+  padding-top: 3px;
+  padding-bottom: 5px;
+  position: absolute;
+  left:0;
+}
+
+#left_update{
+  font-size: 35px;
+  padding:10px; 
+  padding-top: 3px;
+  padding-bottom: 5px;
+  position: absolute;
+  left:0;
+}
+
+.tadd{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white; background-color:green; 
+  height:50px;
+  height: 50px;
+}
+
+.add-content{
+  padding: 30px;
+}
+
+#head-text{
+  font-size: 22px;
+}
+#right-icon{
+  display: flex;
+  justify-content: flex-end;
+  width: 33px;
+  font-size: 35px;
+  padding-top: 3px;
+  padding-bottom: 5px; 
+}
+#greena{
+  background-color:white; 
+  color: black;
+  height: 470px;
+  overflow: auto;
+}
+#add_task{
+  width: 300px;
+}
+#edit_task{
+  width: 300px;
+}
+
+.Tadding{
+  padding: px;
+}
+.centered{
+  display: flex;
+  justify-content: center;
+}
+#display{
+  padding: 10px;
+  overflow: none;
+}
+#file-input{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#todo_add{
+  overflow: hidden;
+}
+#todo_edit{
+  overflow: hidden;
+}
+
+#preview img{
+  width: 50px;
+  height:50px;
+  padding:5px;
+}
+.tdisplay{
+  padding-left: 10px;
+  padding-top:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home {
+    padding-top: 10px;
+}
+span{
+  padding-left: 0px;
+}
+.border{
+  border-bottom: 2px green;
+}
+.flex{
+  display: flex;
+  padding: 5px;
+  width: 100%;
+  align-items: center;
+}
+
+.fl{
+  display: flex;
+  display: center;
+}
+
+.clear_all{
+  color: red;
+  display:flex;
+
+  padding-right: 10px;
+}
+.padtask{
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.edit_del{
+  display: flex;
+  justify-content: space-between;
+}
+.Tclear{
+  margin-right:5px;
+}
+.htodo{
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    margin-bottom: 5px;
+}
+
+.striketext{
+  text-decoration: line-through;
+}
+
+
+
+
+

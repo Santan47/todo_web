@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>todo application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" src="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/todo.css">
+  
+</head>
+
+<body style="background-color:#E2E4E7;">
+
+<div id="todo_home" class="container-fluid">
+    <div id="headerbar" class="row headerbar">
+        <div class="left-shift">
+          <i id="left-icon" class="light fa fa-2x fa-check-circle left_i"></i>
+        </div>
+        <div class="center-shift">
+          <h3 class="font">All Task</h3>
+        </div> 
+        <div class="right-shift">
+          <i id="right-icon" class="light fa fa-2x fa-plus-circle pull-right"></i>
+        </div>
+    </div> 
+    <div id="home" class="container">
+      <div class="row"> 
+            <div id="btnbar" class="btn-group btn-group-justified font">
+              <a id ="all" class="btn active">All</a>
+              <a id ="pen" class="btn">Pending</a>
+              <a id="com" class="btn">Completed</a>
+            </div>         
+        <hr>         
+            <div id="bar" class="container">
+              <div id="all-task">
+                  
+              </div>
+
+              <div id="pending-task">
+                
+              </div>
+                
+              <div id="completed-task">
+              
+              </div>
+            </div>
+          
+   <!--         <button id="edit" class="btn btn-success">Edit Task </button>  -->
+      </div>     
+    </div>
+</div>
+
+<!-- add new task bar -->
+
+<div id="todo_add">
+  <div class="tadd">
+          <i id="left" class="light fa fa-2x fa-angle-left"></i>
+          <div id="head-text"class="font">Add Task</div>
+  </div>
+  <div class="centered container">
+    <div class="row add-content">
+      <div> Write</div>
+      <textarea rows="10" id="add_task" placeholder="add new task" name="task_area"></textarea>   
+      <input id="file-input" type="file" multiple>
+      <div id="preview"></div>
+      <button class="btn btn-success" id="add-task" onclick="" name="addt">Add Task</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- edit new task bar -->
+
+<div id="todo_edit">
+  <div class="tadd">
+          <i id="left_update" class="light fa fa-2x fa-angle-left"></i>
+          <div id="head-text">Edit task</div>
+  </div>
+  <div class="centered container">
+    <div class="row add-content">
+      <div > update</div>
+      <textarea rows="10" id="edit_task" placeholder="update your task" name="task_area"></textarea>   
+      <input id="file-input" type="file" multiple>
+      <div id="preview"></div><br>
+      <button class="btn btn-success" id="edit-task" name="addt">Submit</button>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/handlebar-v2.0.js"></script>
+<script type="text/javascript" src="js/todo.js"></script>
+<script type="text/javascript" src="js/sweetalert2.min.js"></script>
+</body>
+</html>
+
+<script id="alldata-template" type="text/x-handlebars-template">
+      <div id="display">
+        <div class="htodo">
+          <span>{{this.length}}
+            <span>TO-DO/TASKS</span></span>
+            <div id="kclear" class="clear-all" class="clear pull-right">
+            <div  class="Tclear">CLEAR<i class="glyphicon glyphicon-trash" aria-hidden="true"></i></div>         
+            </div>
+        </div>
+          
+          <div id="greena" class="row">
+          {{#each this}}
+          <div class="tdisplay col-sm-12">
+            <div class="flex"> 
+              <div class="fl">
+                      <input type="checkbox" class="check" {{checkClass this.status}} style="zoom:1.3; margin:0" dt-state={{this.status}} data-tid={{this.tid}}></input>
+                      <h5 class="padtask {{checkcomplete this.status}}">{{title}}</h5>
+              </div>
+              </div>
+              <div id="dropdown_item" class="dropdown">
+                      <button class="btnb dropdown-toggle" data-tid={{this.tid}}  type="button" id="menu1" data-toggle="dropdown">Edit
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+                      <li class="btn_status" c-tid={{this.tid}} data-staus="Completed"><a>Completed</a></li>
+                      <li class="btn_status" u-tid={{this.tid}} data-staus="update" data-title="taske-title"><a>Update</a></li>
+                     
+                      <li class="btn_status" data-tid={{this.tid}}  data-staus="delete"><a>Delete</a></li>       
+                      </ul>
+              </div>
+              </div>
+             
+                            
+          {{/each}}
+          </div>
+      </div>
+      </div>
+</script>
